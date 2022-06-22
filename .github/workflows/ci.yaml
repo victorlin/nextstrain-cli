@@ -337,12 +337,6 @@ jobs:
         with:
           name: standalone-x86_64-pc-windows-msvc
 
-      - run: twine upload dist/*
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-          TWINE_REPOSITORY_URL: https://upload.pypi.org/legacy/
-
       - run: ./devel/create-github-release "${{github.ref_name}}" dist/* nextstrain-cli-*-standalone-*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
