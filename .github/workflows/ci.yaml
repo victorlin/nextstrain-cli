@@ -340,3 +340,4 @@ jobs:
       - run: ./devel/create-github-release "${{github.ref_name}}" dist/* nextstrain-cli-*-standalone-*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: 'victorlin/nextstrain-cli'
