@@ -44,7 +44,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
 
@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -124,7 +124,7 @@ jobs:
       # Even though it's a Rust project, the easiest cross-platform way to
       # install it is via pip since they publish wheels with the binaries. :-)
       # Note that this Python version doesn't impact the actual build.
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
       - run: pip install 'pyoxidizer !=0.23.0'
@@ -301,7 +301,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
@@ -337,7 +337,7 @@ jobs:
       # the annotated tag object from the remote so we can verify/use it later.
       - run: git fetch --force origin tag "$GITHUB_REF_NAME"
 
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
       - run: python3 -m pip install --upgrade twine
