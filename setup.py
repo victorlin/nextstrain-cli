@@ -138,10 +138,7 @@ setup(
         "fsspec !=2023.9.1",
         "s3fs[boto3] >=2021.04.0, !=2023.9.1, <2025.12.0",
 
-        # From 2.0.0 onwards, urllib3 is better typed, but not usable (given
-        # our dep tree) on 3.8 and 3.9 so we use types-urllib3 there (see
-        # below).
-        "urllib3 >=2.0.0; python_version >= '3.10'",
+        "urllib3 >=2.0.0",
     ],
 
     extras_require = {
@@ -150,8 +147,7 @@ setup(
             "flake8 >=4.0.0",
             "myst-parser",
             "nextstrain-sphinx-theme>=2022.5",
-            "pytest; python_version != '3.9'",
-            "pytest !=7.0.0; python_version == '3.9'",
+            "pytest",
             "pytest-forked",
             "sphinx>=3",
             "sphinx-autobuild",
@@ -160,10 +156,6 @@ setup(
             "types-boto3",
             "types-boto3-s3",
             "types-botocore",
-
-            # Only necessary for urllib3 <2.0.0, which we only have to use on
-            # Python 3.8 and 3.9.
-            "types-urllib3; python_version < '3.10'"
         ],
     },
 )
