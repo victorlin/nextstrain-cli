@@ -13,6 +13,8 @@ development source code and as such may not be routinely kept up to date.
 
 # __NEXT__
 
+This release drops support for Python versions 3.8 and 3.9.
+
 ## Improvements
 
 * Added the following to the list of "well-known" environment variables that are
