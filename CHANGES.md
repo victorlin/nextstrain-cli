@@ -24,6 +24,8 @@ development source code and as such may not be routinely kept up to date.
   ([#489](https://github.com/nextstrain/cli/pull/489),
   [#490](https://github.com/nextstrain/cli/pull/490))
 
+* Dropped support for Python 3.8 and 3.9. Python 3.10 or later is now required.
+
 ## Bug fixes
 
 * Updated the s3fs dependency to avoid versions starting with 2025.12.0. This
