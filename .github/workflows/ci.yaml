@@ -35,8 +35,6 @@ jobs:
           - macos-latest
           - windows-latest
         python:
-          - '3.8'
-          - '3.9'
           - '3.10'
           - '3.11'
           - '3.12'
@@ -253,8 +251,6 @@ jobs:
           - macos-latest
           - windows-latest
         python:
-          - '3.8'
-          - '3.9'
           - '3.10'
           - '3.11'
           - '3.12'
@@ -336,7 +332,7 @@ jobs:
 
       - uses: ./src/.github/actions/setup-integration-tests
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
       # Download and extract the installation archive.
       - uses: actions/download-artifact@v7
