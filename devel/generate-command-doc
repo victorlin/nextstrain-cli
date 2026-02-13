@@ -184,7 +184,7 @@ def _generate_rst(command: Tuple[str, ...], parser: ArgumentParser) -> Iterable[
         if not group._group_actions:
             continue
 
-        title = group.title if group.title and group.title != OPTIONS_TITLE else "options"
+        title = group.title or "options"
         description = cleandoc(group.description or "")
 
         yield title
