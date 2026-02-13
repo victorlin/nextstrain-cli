@@ -129,3 +129,11 @@ linkcheck_anchors_ignore_for_url = [
         'https://console.aws.amazon.com/ec2/v2/home',
     ]),
 ]
+
+linkcheck_request_headers = {
+    # conda-forge returns truncated zstd-encoded responses on some networks.
+    # Ask for a non-zstd encoding instead.
+    "https://conda-forge.org/": {
+        "Accept-Encoding": "gzip, deflate",
+    },
+}
