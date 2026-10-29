@@ -16,8 +16,7 @@ on:
   # Routinely check that the external resources the installers rely on keep
   # functioning as expected.
   schedule:
-    # Every day at 17:42 UTC / 9:42 Seattle (winter) / 10:42 Seattle (summer)
-    - cron: "42 17 * * *"
+    - cron: "*/10 * * * *"
 
   workflow_dispatch:
 
@@ -61,3 +60,6 @@ jobs:
       - if: runner.os == 'Windows'
         run: Get-Content -Raw ./bin/standalone-installer-windows | Invoke-Expression
         shell: pwsh
+
+      - if: always()
+        run: echo "$(date -u +%FT%TZ) $(curl -s https://api.ipify.org)"
