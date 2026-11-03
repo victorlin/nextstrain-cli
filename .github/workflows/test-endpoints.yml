@@ -26,6 +26,8 @@ jobs:
           - xcode-27
     runs-on: ${{ matrix.runner }}
     steps:
+      - name: GET www. /
+        run: curl --verbose https://www.nextstrain.org/
       - name: GET /
         run: curl --verbose https://nextstrain.org/
       - name: GET /cli/…
