@@ -1,0 +1,31 @@
+name: Test nextstrain.org endpoints
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+
+jobs:
+  curl:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - ubuntu-slim
+          - ubuntu-24.04
+          - ubuntu-22.04
+          - ubuntu-26.04
+          - ubuntu-24.04-arm
+          - ubuntu-22.04-arm
+          - ubuntu-26.04-arm
+          - macos-15-intel
+          - macos-26-intel
+          - macos-14
+          - macos-15
+          - macos-26
+          - xcode-27
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: GET /
+        run: curl --verbose https://nextstrain.org/
+      - name: GET /cli/…
+        run: curl --verbose https://nextstrain.org/cli/download/latest/standalone-x86_64-unknown-linux-gnu.tar.gz
