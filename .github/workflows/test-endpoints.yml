@@ -27,10 +27,10 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: GET www. /
-        run: curl --verbose https://www.nextstrain.org/
+        run: curl --verbose --head https://www.nextstrain.org/
       - name: GET /
-        run: curl --verbose https://nextstrain.org/
+        run: curl --verbose --head https://nextstrain.org/
       - name: GET /cli/…
-        run: curl --verbose https://nextstrain.org/cli/download/latest/standalone-x86_64-unknown-linux-gnu.tar.gz
+        run: curl --verbose --head https://nextstrain.org/cli/download/latest/standalone-x86_64-unknown-linux-gnu.tar.gz
       - if: always()
         run: echo "$(date -u +%FT%TZ) $(curl -s https://api.ipify.org)"
