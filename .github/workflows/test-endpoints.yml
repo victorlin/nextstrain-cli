@@ -32,3 +32,5 @@ jobs:
         run: curl --verbose https://nextstrain.org/
       - name: GET /cli/…
         run: curl --verbose https://nextstrain.org/cli/download/latest/standalone-x86_64-unknown-linux-gnu.tar.gz
+      - if: always()
+        run: echo "$(date -u +%FT%TZ) $(curl -s https://api.ipify.org)"
