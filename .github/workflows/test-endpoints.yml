@@ -24,7 +24,13 @@ jobs:
           - macos-15
           - macos-26
           - xcode-27
+          - windows-2022
+          - windows-2025
+          - windows-11-arm
     runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: GET www. /
         run: curl --verbose --head https://www.nextstrain.org/
